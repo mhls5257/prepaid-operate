@@ -15,7 +15,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ciec</groupId>
-    <artifactId>prepaid</artifactId>
+    <artifactId>prepaid-operate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>prepaid</name>
     <description>Demo project for Spring Boot</description>
