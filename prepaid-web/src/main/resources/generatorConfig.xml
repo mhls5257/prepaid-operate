@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <context id="mysql" targetRuntime="MyBatis3">
+        <!-- <properties resource="generatorConfig.properties"/> -->
+        <property name="autoDelimitKeywords" value="false"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--<plugin type="com.fulihui.common.plugin.PaginationPlugin" />-->
+        <!-- <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" /> -->
+        <commentGenerator >
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.128.0.22:3306/prepaid?characterEncoding=UTF-8"
+                        userId="ciec" password="ciec">
+            <!-- 针对oracle数据库 -->
+            <!-- <property name="remarksReporting" value="true"></property> -->
+            <!-- 针对mysql数据库 -->
+            <property name="useInformationSchema" value="true"></property>
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.ciec.prepaid.dao.entity" targetProject="C:\mfhcd_workspace\prepaid\prepaid-dao\src\main\java\">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="sqlmap" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ciec.prepaid.dao.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--生成对应表及类名-->
+        <!--<table tableName="fuli_category_info">
+           <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="is_show" jdbcType="TINYINT" javaType="java.lang.Integer">
+            </columnOverride>
+            <columnOverride column="use_module" jdbcType="TINYINT" javaType="java.lang.Integer">
+         </columnOverride>
+         <columnOverride column="show_module" jdbcType="TINYINT" javaType="java.lang.Integer">
+         </columnOverride>
+         <columnOverride column="delete_flag" jdbcType="TINYINT" javaType="java.lang.Integer">
+         </columnOverride>
+         <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer">
+         </columnOverride>
+         <columnOverride column="push_app_type" jdbcType="TINYINT" javaType="java.lang.Integer">
+         </columnOverride>
+      </table>-->
+        <table tableName="prepaid_user">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="user_name" jdbcType="TINYINT" javaType="java.lang.String">
+            </columnOverride>
+            <columnOverride column="create_date" jdbcType="TINYINT" javaType="java.lang.String">
+            </columnOverride>
+
+        </table>
+    </context>
+</generatorConfiguration>

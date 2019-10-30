@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.128.0.22/prepaid?useUnicode=true&characterEncoding=utf-8
+    username: ciec
+    password: ciec
+## 开启多个加载配置文件
+  profiles:
+    active: dev
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.ciec.prepaid.dao.entity
+### 日志文件配置
+logging:
+  level:
+    com.ciec.prepaid.dao.mapper: DEBUG
